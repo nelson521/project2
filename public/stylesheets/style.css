@@ -2,3 +2,13 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+body {
+  background-image: url("/images/Untitled.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.dash {
+  color: azure;
+}
