@@ -1,3 +1,5 @@
+// var moment = require("moment");
+
 $(document).ready(function () {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -5,6 +7,7 @@ $(document).ready(function () {
     $(".member-name").text(data.email);
   });
 });
+
 
 var getIP = 'http://ip-api.com/json/';
 var openWeatherMap = 'http://api.openweathermap.org/data/2.5/weather'
@@ -20,4 +23,7 @@ $.getJSON(getIP).done(function (location) {
     $(".humidity").text("Humidity: " + response.main.humidity);
     $(".temp").text("Temperature (F) " + response.main.temp);
   });
-})
+});
+
+var currentTime = moment();
+    $(".time").html("<h1>" + moment(currentTime).format("hh:mm") + "<h1>");
