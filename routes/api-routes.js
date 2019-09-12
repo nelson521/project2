@@ -79,3 +79,9 @@ var req = http.request(options, function (res) {
 req.end();
 })
 };
+
+// app.get("/api/examples", function(req, res) {
+//   db.Example.findAll({}).then(function(dbExamples) {
+//     res.json(dbExamples);
+//   });
+// });
