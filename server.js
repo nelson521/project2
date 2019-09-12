@@ -1,3 +1,4 @@
+require("dotenv").config();
 // Requiring necessary npm packages
 var express = require("express");
 var session = require("express-session");
