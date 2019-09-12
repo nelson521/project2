@@ -22,8 +22,21 @@ $.getJSON(getIP).done(function (location) {
     $(".wind").text("Wind Speed: " + response.wind.speed);
     $(".humidity").text("Humidity: " + response.main.humidity);
     $(".temp").text("Temperature (F) " + response.main.temp);
+    console.log(response);
   });
 });
 
+var stocksAPI = "https://api.usfundamentals.com/v1/companies/xbrl?companies=320193,1418091&format=json&token=31A9w8nZJD94Vw5yCDy2mQ";
+$.get(stocksAPI, (res) => {
+  console.log(res)
+})
+$.ajax({
+  type: "GET",
+  url: stocksAPI,
+  dataType: 'json'
+}).then(function(stocks) {
+  console.log(stocks);
+})
+
 var currentTime = moment();
-    $(".time").html("<h1>" + moment(currentTime).format("hh:mm") + "<h1>");
+  $(".time").html("<h1>" + moment(currentTime).format("hh:mm") + "<h1>");
