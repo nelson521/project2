@@ -1,6 +1,8 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+var http = require("https");
+
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -46,4 +48,34 @@ module.exports = function(app) {
       });
     }
   });
+app.get("/api/quote", function(req, response){
+  
+var options = {
+	"method": "GET",
+	"hostname": "theysaidso.p.rapidapi.com",
+	"port": null,
+	"path": "/qod",
+	"headers": {
+		"x-rapidapi-host": "theysaidso.p.rapidapi.com",
+		"x-rapidapi-key": "71b30fabcemsh2da6c15bbf3c320p1e0755jsnda03754c0478"
+	}
+};
+
+var req = http.request(options, function (res) {
+	var chunks = [];
+
+	res.on("data", function (chunk) {
+		chunks.push(chunk);
+	});
+
+	res.on("end", function () {
+		var body = Buffer.concat(chunks);
+    console.log(body.toString());
+    
+    response.json(body.toString())
+	});
+});
+
+req.end();
+})
 };
