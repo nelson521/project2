@@ -39,4 +39,9 @@ $.ajax({
 })
 
 var currentTime = moment();
-  $(".time").html("<h1>" + moment(currentTime).format("hh:mm") + "<h1>");
+    $(".time").html("<h1>" + moment(currentTime).format("hh:mm") + "<h1>");
+
+$.get("/api/quote",function(data){
+  $("#quote").text(JSON.parse(data).contents.quotes[0].quote)
+})
+
