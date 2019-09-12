@@ -59,3 +59,6 @@ $getJSON(getIP).done(function (location) {
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
+$.get("/api/quote",function(data){
+  $("#quote").text(JSON.parse(data).contents.quotes[0].quote)
+})
