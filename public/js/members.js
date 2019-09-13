@@ -16,7 +16,7 @@ $.getJSON(getIP).done(function (location) {
     lat: location.lat,
     lon: location.lon,
     units: 'imperial',
-    APPID: process.env.Weather_Key1
+    APPID: '166a433c57516f51dfab1f7edaed8413'
   }).then(function (response) {
     $(".city").html("<h1>" + response.name + " Weather Details</h1>");
     $(".wind").text("Wind Speed: " + response.wind.speed);
@@ -31,7 +31,7 @@ $.ajax({
   type: "GET",
   url: stocksAPI,
   dataType: 'json'
-}).then(function(stocks) {
+}).then(function (stocks) {
   $(".company1").html("<h1>" + stocks.dataset.dataset_code + "</h1>");
   $(".close1").text(stocks.dataset.data[0][4])
   console.log(stocks);
@@ -42,7 +42,7 @@ $.ajax({
   type: "GET",
   url: stocksAPI,
   dataType: 'json'
-}).then(function(stocks) {
+}).then(function (stocks) {
   $(".company2").html("<h1>" + stocks.dataset.dataset_code + "</h1>");
   $(".close2").text(stocks.dataset.data[0][4])
   console.log(stocks);
@@ -53,12 +53,16 @@ $.ajax({
   type: "GET",
   url: stocksAPI,
   dataType: 'json'
-}).then(function(stocks) {
+}).then(function (stocks) {
   $(".company3").html("<h1>" + stocks.dataset.dataset_code + "</h1>");
   $(".close3").text(stocks.dataset.data[0][4])
   console.log(stocks);
 });
 
 var currentTime = moment();
-  $(".time").html("<h1>" + moment(currentTime).format("hh:mm") + "<h1>");
-  console.log(currentTime);
+$(".time").html("<h1>" + moment(currentTime).format("hh:mm") + "<h1>");
+console.log(currentTime);
+
+$.get("/api/quote", function (data) {
+  $("#quote").text(JSON.parse(data).contents.quotes[0].quote)
+})
