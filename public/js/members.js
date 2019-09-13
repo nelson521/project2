@@ -26,39 +26,39 @@ $.getJSON(getIP).done(function (location) {
   });
 });
 
-var stocksAPI = "https://cors-anywhere.herokuapp.com/https://www.quandl.com/api/v3/datasets/WIKI/FB/data.json?api_key=kWiSvsgsQDvMhF2HD6aX";
+var stocksAPI = "https://www.quandl.com/api/v3/datasets/WIKI/FB.json?api_key=kWiSvsgsQDvMhF2HD6aX";
 $.ajax({
   type: "GET",
   url: stocksAPI,
   dataType: 'json'
 }).then(function(stocks) {
-  $(".company").html("<h1>" + stocks.dataset.dataset_code + "</h1>");
-  $(".close").text(stocks.dataset.data[0].close)
+  $(".company1").html("<h1>" + stocks.dataset.dataset_code + "</h1>");
+  $(".close1").text(stocks.dataset.data[0][4])
+  console.log(stocks);
+});
+
+var stocksAPI = "https://www.quandl.com/api/v3/datasets/WIKI/GOOGL.json?api_key=kWiSvsgsQDvMhF2HD6aX";
+$.ajax({
+  type: "GET",
+  url: stocksAPI,
+  dataType: 'json'
+}).then(function(stocks) {
+  $(".company2").html("<h1>" + stocks.dataset.dataset_code + "</h1>");
+  $(".close2").text(stocks.dataset.data[0][4])
+  console.log(stocks);
+});
+
+var stocksAPI = "https://www.quandl.com/api/v3/datasets/WIKI/TWTR.json?api_key=kWiSvsgsQDvMhF2HD6aX";
+$.ajax({
+  type: "GET",
+  url: stocksAPI,
+  dataType: 'json'
+}).then(function(stocks) {
+  $(".company3").html("<h1>" + stocks.dataset.dataset_code + "</h1>");
+  $(".close3").text(stocks.dataset.data[0][4])
   console.log(stocks);
 });
 
 var currentTime = moment();
   $(".time").html("<h1>" + moment(currentTime).format("hh:mm") + "<h1>");
   console.log(currentTime);
-
-
-var map = "https://googleapis.com/maps/api/js?libraries=places&key=AIzaSyAPwV82tdZDwt7FUKcXr_ZGfyn84CKPxo8";
-$getJSON(getIP).done(function (location) {
-  $getJSON(map, {
-    lat: location.lat,
-    lon: location.lon
-  })
-      function initialized() {
-        var center = new google.maps.LatLng(map);
-        map = new google.maps.Map(document.getElementById("map"), {
-          center: center,
-          zoom: 14
-        });
-      }
-})
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
-$.get("/api/quote",function(data){
-  $("#quote").text(JSON.parse(data).contents.quotes[0].quote)
-})
