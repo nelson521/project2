@@ -4,11 +4,23 @@ form.login {
 }
 
 body {
-  background-image: url("/images/Untitled.jpg");
+  background-image: url("/images/dashBackground.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.dash {
-  color: azure;
+body {
+  color: black;
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(29, 4, 75);
+}
+
+.welcome {
+  color:orange;
+  margin-left: 80px;
+}
+
+#time {
+  color:orange;
 }

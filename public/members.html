@@ -23,7 +23,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
+        <h2 class="welcome">Welcome <span class="member-name"></span></h2>
       </div>
     </div>
     <div class="row">
@@ -33,16 +33,20 @@
     </div>
     <div class="row">
       <div class="col-md-6">
-        <div class="city"></div>
-        <div class="wind"></div>
-        <div class="humidity"></div>
-        <div class="temp"></div>
+        <h1 id="apiName"></h1>
+        <p>Today's Weather: <span id="apiWeather"></span></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div>Qoute of the Day:</div>
+        <div id="quote"></div>
       </div>
     </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
+  <script type="text/javascript" src="/stevenson/script.js"></script>
 
 
 </body>
