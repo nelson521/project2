@@ -124,3 +124,52 @@ img{
   width: 400px;
   height: 300px;
 }
+
+body {
+  background-image: url("/images/dashBackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body {
+  color: black;
+  -webkit-text-fill-color: rgb(0, 0, 0);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(29, 4, 75);
+}
+
+.welcome {
+  background-color: rgb(255, 255, 255);
+  opacity: 0.6;
+  filter: alpha(opacity=30);
+  text-align: center;
+  margin-left: 80px;
+}
+
+#time {
+  color:orange;
+}
+
+#quote {
+  background-color: rgb(255, 255, 255);
+  opacity: 0.6;
+  filter: alpha(opacity=30);
+text-align: center;
+font-size: 30px;
+position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#apiName{
+  text-align: left;
+  color: white;
+}
+
+#rowTop{
+  background-color: rgb(255, 255, 255);
+  opacity: 0.6;
+  filter: alpha(opacity=30);
+  text-align: center;
+}
