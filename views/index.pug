@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  h1 DASH
+  br
+  h2 Organize your life with a little inspiration:
+  br
+  h2= title
+  br
+  br
+
+  div(class="col-md-12 wether")
+    h3 It's currently 74°F in Philadelphia and Partly Cloudy
+    img(src='https://www.pinclipart.com/picdir/big/420-4201880_clipart-of-partly-cloudy-and-comments-partly-cloudy.png')
+    h3 GOOGLE:1,240.03 USD +5.06 (0.41%)↑
+  br
+  div(class="col-md-6 task")
+    h2 Create Main Task
+
+    form(action="/users/create", method="post", class="well")
+      div(class="form-group")
+        label(for="username")
+          | Main Task
+        input(type="text", name="username", class="form-control")
+      input(type="submit" class="btn btn-default")
+
+  div(class="col-md-6 outline")
+    h2 Outline - you can create sub-tasks here!
+
+    ul
+      each user in users
+        li
+          strong
+            = user.username
+          | &nbsp;
+          a(href="/users/" + user.id + "/destroy", class="btn btn-xs btn-warning") complete
+          ul
+            li
+              | Create sub-task
+              form(action="/users/" + user.id + "/tasks/create", method="post", class="form-inline")
+                div(class="form-group")
+                  input(type="text", name="title", class="input-sm form-control")
+                  input(type="submit", class="btn btn-sm btn-default")
+            each task in user.Tasks
+              li
+                strong
+                  = task.title
+                | &nbsp;
+                a(href="/users/" + user.id + "/tasks/" + task.id + "/destroy",  class="btn btn-xs btn-warning") complete
