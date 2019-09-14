@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>Passport Authentication</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-</head>
+  <head>
+    <title>Passport Authentication</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  </head>
 
 <body>
   <nav class="navbar navbar-default">
@@ -35,7 +35,11 @@
       </div>
       <div class="col-md-6">
         <h1 id="apiName"></h1>
-        <p>Today's Weather: <span id="apiWeather"></span></p>
+        <p>Temp: <span id="apiWeather"></span>°F</p>
+        <p>Description: <span id="description"></span></p>
+        <p>Wind Speed: <span id="windSpeed"></span>MPH</p>
+        <p>Humidity: <span id="humidity"></span>%</p>
+        <p>Pressure: <span id="pressure"></span>"</p>
       </div>
     </div>
   </div>
@@ -66,7 +70,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/stevenson/script.js"></script>
+  <script type="text/javascript" src="../stevenson/script.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
 
 </body>
