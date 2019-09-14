@@ -29,6 +29,9 @@ $(document).ready(function () {
     $('#apiWeather').text(JSON.stringify(response.main.temp))
     $('#description').text(JSON.stringify(response.weather[0].description).replace(/\"/g, ""));
     $('#windSpeed').text(JSON.stringify(response.wind.speed));
+    $('#humidity').text(JSON.stringify(response.main.humidity))
+    $('#pressure').text(JSON.stringify(response.main.pressure));
+
     console.log(response)
 
   });
