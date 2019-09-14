@@ -27,6 +27,7 @@ $(document).ready(function () {
   }).then(function (response) {
     $('#apiName').text(JSON.stringify(response.name).replace(/\"/g, ""));
     $('#apiWeather').text(JSON.stringify(response.main.temp))
+    $('#description').text(JSON.stringify(response.weather[0].description).replace(/\"/g, ""));
     console.log(response)
 
   });
